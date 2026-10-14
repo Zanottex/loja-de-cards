@@ -1,0 +1,3 @@
+Loja de Cartas TCG.
+
+Uma loja de Cards TCG (Trading Card Game) é um estabelecimento especializado na comercialização de cartas colecionáveis utilizadas em jogos de cartas estratégicos, como Pokémon TCG, Magic: The Gathering, Yu-Gi-Oh! e outros. Essas lojas oferecem produtos como cartas avulsas, boosters, decks, coleções especiais e acessórios, atendendo tanto a colecionadores quanto a jogadores competitivos. Além da venda de produtos, também podem promover torneios, eventos e encontros entre jogadores, incentivando a interação da comunidade e o crescimento do universo dos Trading Card Games.
