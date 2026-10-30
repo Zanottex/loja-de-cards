@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Encontre cartas colecionáveis e crie uma carta personalizada do seu jeito."
+    />
+    <title>CardVerse — sua loja de cartas</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <aside class="sidebar" aria-label="Navegação principal">
+      <a class="brand" href="#" aria-label="CardVerse, início">LOGO</a>
+      <nav class="category-nav" aria-label="Categorias de cartas">
+        <a href="#"><span>Opção 1</span><small>Exemplo: pokemon</small></a>
+        <a href="#"><span>Opção 2</span><small>Exemplo: Yu-gi-oh</small></a>
+        <a href="#"><span>Opção 3</span><small>Exemplo: Magic</small></a>
+        <a href="#"><span>Opção 4</span><small>Exemplo: Lorcana</small></a>
+        <a href="#"><span>Opção 5</span><small>Exemplo: Outros</small></a>
+      </nav>
+      <a class="sidebar-profile" href="#" aria-label="Perfil">
+        <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="9" r="7"/><path d="M3 28c0-6 5-10 13-10s13 4 13 10v2H3z"/></svg>
+      </a>
+    </aside>
+
+    <div class="page">
+      <header class="topbar">
+        <a class="brand mobile-brand" href="#" aria-label="CardVerse, início">LOGO</a>
+        <button class="icon-button menu-button" type="button" aria-label="Abrir menu">
+          <svg viewBox="0 0 32 32" aria-hidden="true"><path d="M5 8h22M5 16h22M5 24h22"/></svg>
+        </button>
+        <form class="search" role="search">
+          <label class="visually-hidden" for="search">Buscar cartas</label>
+          <input id="search" type="search" />
+          <button type="submit" aria-label="Buscar">
+            <svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="13" cy="13" r="9"/><path d="m20 20 8 8"/></svg>
+          </button>
+        </form>
+        <nav class="desktop-actions" aria-label="Ações da loja">
+          <a href="#" aria-label="Carrinho"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M4 7h6l6 25h24l6-18H14"/><circle cx="20" cy="40" r="3"/><circle cx="38" cy="40" r="3"/></svg></a>
+          <a href="#" aria-label="Favoritos"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 42 7 25C-3 13 12 1 24 13 36 1 51 13 41 25z"/></svg></a>
+          <a href="#" aria-label="Início"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="m4 22 20-18 20 18h-6v21H27V29h-7v14H10V22z"/></svg></a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero" aria-labelledby="hero-title">
+          <div class="hero-copy">
+            <p class="eyebrow">PERSONALIZE DO SEU JEITO</p>
+            <h1 id="hero-title">Crie sua carta <em>personalizada</em></h1>
+            <p class="hero-description">Transforme suas ideias, personagens, memórias e tudo o que você ama em uma carta única!</p>
+            <a class="primary-button" href="#">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 5 4 4M4 20l4-.8L19 8a2.8 2.8 0 0 0-4-4L4 15zM3 21h18"/></svg>
+              Começar agora <span aria-hidden="true">›</span>
+            </a>
+            <ul class="benefits" aria-label="Vantagens">
+              <li><span>✎</span>Totalmente<br />personalizável</li>
+              <li><span>▧</span>Sua arte, foto<br />ou personagem</li>
+              <li><span>♢</span>Alta qualidade<br />de impressão</li>
+              <li><span>⇢</span>Entrega rápida<br />e segura</li>
+            </ul>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="spark spark-one">✦</div>
+            <div class="hero-card">
+              <div class="card-topline">APOIADOR <span>TREINADOR</span></div>
+              <div class="card-name">Ordem da Chefia</div>
+              <div class="card-portrait"><span>✦</span><b>✧</b></div>
+              <div class="card-caption">Uma aventura extraordinária começa com uma carta.</div>
+            </div>
+            <p class="hero-art-note">Sua história<br />em forma<br />de carta</p>
+            <div class="spark spark-two">✦</div>
+          </div>
+        </section>
+
+        <nav class="mobile-categories" aria-label="Categorias de cartas">
+          <a href="#"><span>Opção 1</span><small>Exemplo:<br />pokemon</small></a>
+          <a href="#"><span>Opção 2</span><small>Exemplo: Yu-gi-oh</small></a>
+          <a href="#"><span>Opção 3</span><small>Exemplo: Magic</small></a>
+          <a href="#"><span>Opção 4</span><small>Exemplo: Lorcana</small></a>
+          <a href="#"><span>Opção 5</span><small>Exemplo: Outros</small></a>
+        </nav>
+
+        <section class="featured" aria-labelledby="featured-title">
+          <div class="section-heading">
+            <h2 id="featured-title">Destaques do dia</h2>
+            <button class="next-button" type="button" aria-label="Ver mais cartas"><span>➜</span></button>
+          </div>
+          <div class="product-grid">
+            <article class="product">
+              <a class="card-image card-image-one" href="#" aria-label="Ver carta em destaque 1"><span class="cloud"></span><span class="hills"></span><span class="landscape-label">CARD<br /><b>01</b></span></a>
+              <div class="product-info"><p>Informações da carta:</p><ul><li>Nome</li><li>Preço</li><li>Estado de conservação</li></ul></div>
+            </article>
+            <article class="product">
+              <a class="card-image card-image-two" href="#" aria-label="Ver carta em destaque 2"><span class="cloud"></span><span class="hills"></span><span class="landscape-label">CARD<br /><b>02</b></span></a>
+              <div class="product-info"><p>Informações da carta:</p><ul><li>Nome</li><li>Preço</li><li>Estado de conservação</li></ul></div>
+            </article>
+            <article class="product">
+              <a class="card-image card-image-three" href="#" aria-label="Ver carta em destaque 3"><span class="cloud"></span><span class="hills"></span><span class="landscape-label">CARD<br /><b>03</b></span></a>
+              <div class="product-info"><p>Informações da carta:</p><ul><li>Nome</li><li>Preço</li><li>Estado de conservação</li></ul></div>
+            </article>
+            <article class="product">
+              <a class="card-image card-image-four" href="#" aria-label="Ver carta em destaque 4"><span class="cloud"></span><span class="hills"></span><span class="landscape-label">CARD<br /><b>04</b></span></a>
+              <div class="product-info"><p>Informações da carta:</p><ul><li>Nome</li><li>Preço</li><li>Estado de conservação</li></ul></div>
+            </article>
+            <article class="product">
+              <a class="card-image card-image-five" href="#" aria-label="Ver carta em destaque 5"><span class="cloud"></span><span class="hills"></span><span class="landscape-label">CARD<br /><b>05</b></span></a>
+              <div class="product-info"><p>Informações da carta:</p><ul><li>Nome</li><li>Preço</li><li>Estado de conservação</li></ul></div>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <nav class="bottom-nav" aria-label="Atalhos">
+        <a href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="m2 15 14-13 14 13h-4v15h-8v-9h-5v9H6V15z"/></svg><span>Início</span></a>
+        <a href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 2h12v12H2zm16 0h12v12H18zM2 18h12v12H2zm16 0h12v12H18z"/></svg><span>Categorias</span></a>
+        <a href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 29 4 17C-3 9 8 1 16 9c8-8 19 0 12 8z"/></svg><span>Favoritos</span></a>
+        <a href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="9" r="7"/><path d="M2 30c0-7 5-11 14-11s14 4 14 11z"/></svg><span>Perfil</span></a>
+        <a href="#"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M2 4h4l4 19h17l4-14H8"/><circle cx="13" cy="29" r="2.5"/><circle cx="26" cy="29" r="2.5"/></svg><span>Carrinho</span></a>
+      </nav>
+    </div>
+  </body>
+</html>
