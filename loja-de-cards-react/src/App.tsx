@@ -11,7 +11,7 @@ import './App.css'
 
 function App() {
   const [activeCategory, setActiveCategory] = useState('todos')
-  const { featuredProducts, accessoryProducts } = useProducts()
+  const { featuredProducts, accessoryProducts, isLoading, error } = useProducts()
   const handleGoHome = () => setActiveCategory('todos')
 
   return (
@@ -48,6 +48,9 @@ function App() {
           products={featuredProducts}
           activeCategory={activeCategory}
           showNextButton
+          maxProducts={5}
+          isLoading={isLoading}
+          error={error}
         />
         <ProductSection
           id="more-products-title"

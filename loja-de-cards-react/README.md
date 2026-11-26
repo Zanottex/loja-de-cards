@@ -1,75 +1,42 @@
-# React + TypeScript + Vite
+# Loja de Cards
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Projeto de loja de cartas e acessórios feito com React, TypeScript e Vite.
 
-Currently, two official plugins are available:
+## Como executar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+npm install
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Crie um arquivo `.env.local` na raiz deste projeto e informe sua chave da API Mockaroo:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```env
+VITE_MOCKAROO_API_KEY=sua_chave_mockaroo
 ```
+
+Depois, inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+## Fonte dos dados
+
+A listagem principal de cartas é carregada com `fetch` do endpoint
+`https://my.api.mockaroo.com/card.json`, usando a chave Mockaroo configurada em
+`.env.local`. O endpoint deve retornar um array JSON com os campos `id`, `name`,
+`category`, `price` e `tipo`; `condition` e `image` são opcionais. Registros da
+categoria `acessorios` são ignorados nessa listagem. “Destaques do dia” exibe
+até cinco cartas quando “Todos” está selecionado; ao selecionar uma categoria,
+a seção mostra todas as cartas dessa categoria retornadas pelo endpoint.
+
+Os acessórios da seção secundária continuam no vetor local
+`src/cases/products/dtos/product.ts`. O arquivo `mockaroo-products.csv` contém
+os dados de exemplo para importar no Mockaroo. A coluna `image` recebe o nome
+do arquivo de imagem; o projeto associa esses nomes às imagens locais em
+`src/cases/products/assets`. Reimporte o CSV no Mockaroo para atualizar os
+dados servidos pelo endpoint.
+
+> A variável `VITE_` é incorporada ao código entregue ao navegador. Use essa
+> configuração apenas para este projeto de demonstração e não para uma chave
+> que precise permanecer secreta em produção.
