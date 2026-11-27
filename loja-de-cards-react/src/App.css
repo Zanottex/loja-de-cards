@@ -26,15 +26,15 @@
 }
 
 :root[data-theme="light"] {
-  --color-background: #f3f5f7;
-  --color-panel: #fff;
+  --color-background: #f7bdd2;
+  --color-panel: #fce3ed;
   --color-purple: #704087;
-  --color-purple-light: #fff;
+  --color-purple-light: #fce3ed;
   --color-lilac: #e8edf2;
-  --color-card-surface: #fff;
+  --color-card-surface: #fce3ed;
   --color-text: #252b33;
   --color-text-dark: #252b33;
-  background: #f3f5f7;
+  background: #f7bdd2;
   color: #252b33;
 }
 
@@ -998,14 +998,14 @@ button {
 
 :root[data-theme="light"] .site-shell,
 :root[data-theme="light"] body {
-  background: #f3f5f7;
+  background: #f7bdd2;
 }
 
 :root[data-theme="light"] .topbar,
 :root[data-theme="light"] .sidebar,
 :root[data-theme="light"] .mobile-categories,
 :root[data-theme="light"] .site-footer {
-  background: #fff;
+  background: #f8cad9;
   color: #252b33;
 }
 
@@ -1014,18 +1014,18 @@ button {
 :root[data-theme="light"] .mobile-categories,
 :root[data-theme="light"] .sidebar,
 :root[data-theme="light"] .site-footer {
-  border-color: #dde3e8;
+  border-color: #efbdd0;
 }
 
 :root[data-theme="light"] .menu-button,
 :root[data-theme="light"] .theme-button {
-  border-color: #dde3e8;
+  border-color: #efbdd0;
   color: #704087;
 }
 
 :root[data-theme="light"] .theme-button:hover,
 :root[data-theme="light"] .theme-button:focus-visible {
-  background: #f1f4f7;
+  background: #f8cad9;
 }
 
 :root[data-theme="light"] .search-button {
@@ -1044,6 +1044,71 @@ button {
 
 :root[data-theme="light"] .featured .section-heading h2 {
   color: #fff;
+}
+
+:root[data-theme="light"] .product-info p,
+:root[data-theme="light"] .product-info li,
+:root[data-theme="light"] .product-info li:first-child,
+:root[data-theme="light"] .product-info li:nth-child(3),
+:root[data-theme="light"] .site-footer,
+:root[data-theme="light"] .mobile-categories button,
+:root[data-theme="light"] .category-nav button,
+:root[data-theme="light"] .menu-button {
+  color: #252b33;
+}
+
+:root[data-theme="light"] .product-info li:nth-child(2) {
+  color: #087a45;
+}
+
+:root[data-theme="light"] .featured .section-heading h2,
+:root[data-theme="light"] .featured .next-button,
+:root[data-theme="light"] .mobile-categories button.active,
+:root[data-theme="light"] .category-nav button.active,
+:root[data-theme="light"] .search-button {
+  color: #fff;
+}
+
+:root[data-theme="light"] .mobile-categories,
+:root[data-theme="light"] .category-nav,
+:root[data-theme="light"] .bottom-bar {
+  background: #f8cad9;
+}
+
+:root[data-theme="light"] .bottom-bar {
+  border-color: #efbdd0;
+}
+
+:root[data-theme="light"] .bottom-nav svg,
+:root[data-theme="light"] .bottom-theme-button {
+  color: #704087;
+  fill: #704087;
+  stroke: #704087;
+}
+
+:root[data-theme="light"] .banner {
+  border-color: #efbdd0;
+  background: #f8cad9;
+  box-shadow: 0 0.25rem 0.75rem rgb(112 64 135 / 10%);
+}
+
+:root[data-theme="light"] .product,
+:root[data-theme="light"] .card-image {
+  border-color: #efbdd0;
+}
+
+:root[data-theme="light"] .product,
+:root[data-theme="light"] .product-info {
+  background: #f8cad9;
+}
+
+:root[data-theme="light"] .card-image {
+  background: #fce3ed;
+}
+
+:root[data-theme="light"] .products-status {
+  border-color: #efbdd0;
+  color: #252b33;
 }
 
 :root[data-theme="light"] .header-actions svg {
