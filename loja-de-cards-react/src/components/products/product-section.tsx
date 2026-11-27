@@ -1,4 +1,4 @@
- import type { Product } from '../../cases/products/dtos/product'
+import type { Product } from '../../cases/products/dtos/product'
 import { ProductCard } from '../../cases/products/components/product-card'
 
 type ProductSectionProps = {
@@ -7,6 +7,9 @@ type ProductSectionProps = {
   products: Product[]
   activeCategory: string
   showNextButton?: boolean
+  maxProducts?: number
+  isLoading?: boolean
+  error?: string | null
 }
 
 export function ProductSection({
@@ -15,12 +18,19 @@ export function ProductSection({
   products,
   activeCategory,
   showNextButton = false,
+  maxProducts,
+  isLoading = false,
+  error = null,
 }: ProductSectionProps) {
-  const visibleProducts = products.filter(
+  const categoryProducts = products.filter(
     (product) => activeCategory === 'todos' || product.category === activeCategory,
   )
+  const visibleProducts =
+    activeCategory === 'todos' && maxProducts !== undefined
+      ? categoryProducts.slice(0, maxProducts)
+      : categoryProducts
 
-  if (visibleProducts.length === 0) {
+  if (visibleProducts.length === 0 && !isLoading && !error) {
     return null
   }
 
@@ -35,11 +45,21 @@ export function ProductSection({
         )}
       </header>
 
-      <div className="product-grid">
-        {visibleProducts.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
-      </div>
+      {isLoading ? (
+        <p className="products-status products-loading" role="status">
+          Carregando cartas...
+        </p>
+      ) : error ? (
+        <p className="products-status products-error" role="alert">
+          {error}
+        </p>
+      ) : (
+        <div className="product-grid">
+          {visibleProducts.map((product) => (
+            <ProductCard key={product.id} product={product} />
+          ))}
+        </div>
+      )}
     </section>
   )
 }

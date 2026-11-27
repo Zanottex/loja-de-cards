@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useProducts } from './cases/products/hooks/use-products'
 import { Footer } from './components/layout/footer'
 import { Header } from './components/layout/header'
@@ -11,12 +11,24 @@ import './App.css'
 
 function App() {
   const [activeCategory, setActiveCategory] = useState('todos')
-  const { featuredProducts, accessoryProducts } = useProducts()
+  const [theme, setTheme] = useState<'dark' | 'light'>(() => {
+    const savedTheme = window.localStorage.getItem('cardwish-theme')
+    return savedTheme === 'light' ? 'light' : 'dark'
+  })
+  const { featuredProducts, accessoryProducts, isLoading, error } = useProducts()
   const handleGoHome = () => setActiveCategory('todos')
+  const toggleTheme = () => setTheme((currentTheme) => (
+    currentTheme === 'dark' ? 'light' : 'dark'
+  ))
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme
+    window.localStorage.setItem('cardwish-theme', theme)
+  }, [theme])
 
   return (
-    <div className="site-shell" id="top">
-      <Header onGoHome={handleGoHome} />
+    <div className="site-shell" id="top" data-theme={theme}>
+      <Header onGoHome={handleGoHome} theme={theme} onToggleTheme={toggleTheme} />
 
       <Sidebar
         categories={categories}
@@ -48,6 +60,9 @@ function App() {
           products={featuredProducts}
           activeCategory={activeCategory}
           showNextButton
+          maxProducts={5}
+          isLoading={isLoading}
+          error={error}
         />
         <ProductSection
           id="more-products-title"
@@ -57,7 +72,7 @@ function App() {
         />
       </main>
 
-      <Footer />
+      <Footer theme={theme} onToggleTheme={toggleTheme} />
     </div>
   )
 }
