@@ -25,6 +25,19 @@
   --radius-pill: 999px;
 }
 
+:root[data-theme="light"] {
+  --color-background: #f3f5f7;
+  --color-panel: #fff;
+  --color-purple: #704087;
+  --color-purple-light: #fff;
+  --color-lilac: #e8edf2;
+  --color-card-surface: #fff;
+  --color-text: #252b33;
+  --color-text-dark: #252b33;
+  background: #f3f5f7;
+  color: #252b33;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -201,6 +214,38 @@ button {
 
 .header-actions {
   display: none;
+}
+
+.theme-button {
+  display: grid;
+  width: 2.75rem;
+  height: 2.75rem;
+  place-items: center;
+  padding: 0.55rem;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.theme-button svg {
+  width: 100%;
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.theme-button svg path {
+  fill: none;
+}
+
+.theme-button:hover,
+.theme-button:focus-visible {
+  background: rgb(255 255 255 / 12%);
+  outline: none;
 }
 
 .main-content {
@@ -525,11 +570,34 @@ button {
   gap: 0;
 }
 
+.bottom-theme-button {
+  display: flex;
+  min-width: 2.75rem;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--color-purple);
+  cursor: pointer;
+}
+
 .bottom-nav svg {
   width: clamp(1.65rem, 7vw, 2rem);
   height: clamp(1.65rem, 7vw, 2rem);
   fill: var(--color-purple);
   stroke: var(--color-purple);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.bottom-theme-button svg {
+  width: clamp(1.65rem, 7vw, 2rem);
+  height: clamp(1.65rem, 7vw, 2rem);
+  fill: none;
+  stroke: currentColor;
   stroke-linecap: round;
   stroke-linejoin: round;
   stroke-width: 2;
@@ -926,6 +994,70 @@ button {
 .featured[aria-labelledby="featured-title"] .next-button {
   right: 0.75rem;
   background: var(--color-background);
+}
+
+:root[data-theme="light"] .site-shell,
+:root[data-theme="light"] body {
+  background: #f3f5f7;
+}
+
+:root[data-theme="light"] .topbar,
+:root[data-theme="light"] .sidebar,
+:root[data-theme="light"] .mobile-categories,
+:root[data-theme="light"] .site-footer {
+  background: #fff;
+  color: #252b33;
+}
+
+:root[data-theme="light"] .topbar,
+:root[data-theme="light"] .section-heading,
+:root[data-theme="light"] .mobile-categories,
+:root[data-theme="light"] .sidebar,
+:root[data-theme="light"] .site-footer {
+  border-color: #dde3e8;
+}
+
+:root[data-theme="light"] .menu-button,
+:root[data-theme="light"] .theme-button {
+  border-color: #dde3e8;
+  color: #704087;
+}
+
+:root[data-theme="light"] .theme-button:hover,
+:root[data-theme="light"] .theme-button:focus-visible {
+  background: #f1f4f7;
+}
+
+:root[data-theme="light"] .search-button {
+  background: #704087;
+  color: #fff;
+}
+
+:root[data-theme="light"] .section-heading h1,
+:root[data-theme="light"] .section-heading h2 {
+  color: #252b33;
+}
+
+:root[data-theme="light"] .featured .section-heading {
+  background: #704087;
+}
+
+:root[data-theme="light"] .featured .section-heading h2 {
+  color: #fff;
+}
+
+:root[data-theme="light"] .header-actions svg {
+  stroke: #704087;
+}
+
+:root[data-theme="light"] .header-actions a:nth-child(3) svg {
+  fill: none;
+  stroke: #704087;
+}
+
+:root[data-theme="light"] .header-actions a:nth-child(2) svg {
+  fill: #704087;
+  stroke: #704087;
 }
 
 .product,

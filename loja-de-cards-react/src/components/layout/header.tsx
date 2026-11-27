@@ -2,9 +2,11 @@ import logo from '../../assets/img/Logo-transparent.png'
 
 type HeaderProps = {
   onGoHome: () => void
+  theme: 'dark' | 'light'
+  onToggleTheme: () => void
 }
 
-export function Header({ onGoHome }: HeaderProps) {
+export function Header({ onGoHome, theme, onToggleTheme }: HeaderProps) {
   return (
     <header className="topbar">
       <a className="brand mobile-brand" href="#top" aria-label="CardWish, início" onClick={onGoHome}>
@@ -31,6 +33,24 @@ export function Header({ onGoHome }: HeaderProps) {
       </div>
 
       <nav className="header-actions" aria-label="Ações da loja">
+        <button
+          className="theme-button"
+          type="button"
+          onClick={onToggleTheme}
+          aria-label={theme === 'dark' ? 'Ativar tema claro' : 'Ativar tema escuro'}
+          title={theme === 'dark' ? 'Tema claro' : 'Tema escuro'}
+        >
+          {theme === 'dark' ? (
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <circle cx="24" cy="24" r="9" />
+              <path d="M24 4v6M24 38v6M4 24h6M38 24h6M9.9 9.9l4.2 4.2M33.9 33.9l4.2 4.2M38.1 9.9l-4.2 4.2M14.1 33.9l-4.2 4.2" />
+            </svg>
+          ) : (
+            <svg viewBox="0 0 48 48" aria-hidden="true">
+              <path d="M37 31A16 16 0 0 1 17 11a16 16 0 1 0 20 20z" />
+            </svg>
+          )}
+        </button>
         <a href="#" aria-label="Carrinho">
           <svg viewBox="0 0 48 48" aria-hidden="true">
             <path d="M4 7h6l6 25h24l6-18H14" />
